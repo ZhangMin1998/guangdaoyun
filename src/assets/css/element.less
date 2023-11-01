@@ -1,0 +1,214 @@
+@import 'basicVariate.less';
+// ---------------------------------------------表格样式---------------------------------------------
+.el-table {
+  color: @base-text-color-2;
+  .el-checkbox__inner {
+    border: 1px solid @border-color-1;
+    border-radius: 0;
+    &::after {
+      border-width: 2px;
+    }
+  }
+  .el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: @active-bg-color1;
+    border-color: @active-bg-color1;
+  }
+  .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: @active-bg-color1;
+    border-color: @active-bg-color1;
+  }
+}
+.el-table--border .el-table__inner-wrapper::after,
+.el-table--border::after,
+.el-table--border::before,
+.el-table__inner-wrapper::before {
+  display: none;
+}
+.el-table__border-left-patch {
+  display: none;
+}
+.el-table th.el-table__cell {
+  background-color: #f1f2f5;
+  .cell {
+    font-size: 14px;
+    color: @base-text-color-1;
+  }
+}
+.el-table td.el-table__cell,
+.el-table th.el-table__cell.is-leaf {
+  border: none;
+}
+.el-table .cell {
+  padding: 0 16px;
+  line-height: 32px;
+  white-space: nowrap;
+}
+.el-table td.el-table__cell {
+  .cell {
+    font-size: 16px;
+  }
+}
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell {
+  background: linear-gradient(180deg, rgba(55, 99, 170, 0.11) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.el-table__body-wrapper {
+  .el-scrollbar__view {
+    height: 100%;
+  }
+  .el-table__empty-block {
+    .el-table__empty-text {
+      color: @base-text-color-3;
+    }
+  }
+}
+
+// ---------------------------------------------分页---------------------------------------------
+.el-pagination button {
+  min-width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 16px;
+  &:hover {
+    .el-icon {
+      color: @active-color;
+    }
+  }
+}
+.el-pager li {
+  min-width: 28px;
+  height: 28px;
+  line-height: 28px;
+  color: @base-text-color-4;
+  font-size: 12px;
+  &:hover {
+    color: @active-color;
+  }
+}
+// .el-pagination.is-background .btn-next.is-disabled,
+// .el-pagination.is-background .btn-next:disabled,
+// .el-pagination.is-background .btn-prev.is-disabled,
+// .el-pagination.is-background .btn-prev:disabled,
+// .el-pagination.is-background .el-pager li.is-disabled,
+// .el-pagination.is-background .el-pager li:disabled,
+// .el-pagination.is-background .btn-next,
+// .el-pagination.is-background .btn-prev,
+// .el-pagination.is-background .el-pager li {
+//   background-color: rgba(246, 247, 250, 0.52);
+// }
+.el-pagination .btn-next .el-icon,
+.el-pagination .btn-prev .el-icon {
+  font-size: 16px;
+  color: @base-text-color-3;
+}
+.el-pager li.is-active {
+  font-weight: 400;
+}
+.el-pagination.is-background .el-pager li.is-active {
+  background-color: transparent;
+  color: @base-text-color-4;
+}
+.el-pagination__jump {
+  font-size: 12px;
+  color: @base-text-color-4;
+}
+.el-pagination__editor.el-input {
+  min-width: 60px;
+  line-height: 28px;
+  .el-input__wrapper {
+    background-color: rgba(246, 247, 250, 0.52);
+    border-radius: 4px;
+    box-shadow: none;
+  }
+  .el-input__inner {
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    color: @base-text-color-3;
+  }
+}
+
+.el-input .el-input__inner {
+  color: @base-text-color-4;
+  &::placeholder {
+    font-size: 14px;
+    color: @base-text-color-3;
+  }
+}
+.el-input .el-input__validateIcon {
+  display: none !important;
+}
+
+// ---------------------------------------------按钮样式重置-----------------------------------------------
+.el-button {
+  border-radius: 0;
+}
+// 蓝色按钮 el-button type=primary
+.blue.el-button--primary {
+  background-color: @active-color;
+  &:focus {
+    background-color: @active-color;
+  }
+  &:link {
+    background-color: @active-color;
+  }
+  &:visited {
+    background-color: @active-color;
+  }
+  &:hover {
+    background-color: @active-color;
+  }
+  &:active {
+    background-color: @active-color;
+  }
+}
+// 朴素按钮 el-button plain
+.blank.el-button.is-plain {
+  border: 1px solid @active-color;
+  color: @active-color;
+  font-size: 16px;
+  // align-items: baseline;
+}
+
+
+// ----------------------------------------el-tree更改------------------------------------------
+.el-tree-addordel {
+  // 更换+ - 图标
+  .el-tree-node__expand-icon.expanded {
+    -webkit-transform: rotate(0deg) !important;
+    transform: rotate(0deg) !important;
+  }
+  
+  .el-tree-node__expand-icon:not(.is-leaf):before{
+    content: '\e6ca' !important;
+    font-family: iconfont;
+    font-size: 16px;
+    color:#D6DBE3
+  }
+  .el-tree-node__expand-icon.expanded:before {
+    content: '\e6cb' !important;
+    font-family: iconfont;
+    font-size: 16px;
+    color:@active-color
+  }
+}
+
+// ----------------------------------------el-checkbox更改------------------------------------------
+.el-switch{
+  .el-switch__label{
+    transition: none !important;
+    user-select: none;
+    &.is-active{
+      color: #0D162A;
+    }
+    span{
+      font-size: 16px;
+    }
+  }
+  .el-switch__label:not(.is-active){
+    visibility:hidden
+  }
+  .el-switch__label--right{
+    position: absolute;
+    margin-left: 0;
+  }
+}
